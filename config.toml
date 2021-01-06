@@ -2,3 +2,10 @@ baseURL = "https://oli.works/"
 languageCode = "en-us"
 title = "Oli works ..."
 theme = "oliworks"
+
+[params]
+phoneNumber = "+491785384659"
+emailAddress = "mail@oliverjakoubek.de"
+threemaId = "MR7R68AH"
+twitterAccount = "jakoubek"
+panelbearSiteId = "6ouG0mr9UmW"

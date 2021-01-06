@@ -10,7 +10,7 @@
     <p>Too much&nbsp;☕</p>
     <br>
     <p>
-        <a href="tel:+491785384659">Mobile</a> ~ <a href="mailto:mail@oliverjakoubek.de" target="_blank">Email</a> ~ <a href="https://www.twitter.com/jakoubek/" target="_blank">Twitter</a> ~ <a href="https://www.jakoubek.net/?ref=ow" target="_blank">My software consulting (German)</a>
+        <a href="tel:{{ .Site.Params.phoneNumber }}">Mobile</a> ~ <a href="mailto:{{ .Site.Params.emailAddress }}" target="_blank">Email</a> ~ <a href="https://threema.id/{{ .Site.Params.threemaId }}?text=">Threema</a> ~ <a href="https://www.twitter.com/{{ .Site.Params.twitterAccount }}/" target="_blank">Twitter</a> ~ <a href="https://www.jakoubek.net/?ref=ow" target="_blank">My software consulting (German)</a>
     </p>
 
 {{ end }}

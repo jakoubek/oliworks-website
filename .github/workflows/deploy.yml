@@ -36,7 +36,7 @@ jobs:
           cp static/robots.txt public/deployment/
 
       # Step 5 - Deploy via scp to Opalstack
-      - name: copy txt files to Opalstack
+      - name: copy files to Opalstack
         uses: appleboy/scp-action@master
         env:
           HOST: ${{ secrets.HOST }}
@@ -44,6 +44,6 @@ jobs:
           PORT: ${{ secrets.PORT }}
           KEY: ${{ secrets.KEY }}
         with:
-          source: "public/deployment/*"
-          target: "/home/oli/apps/jakoubek_www"
+          source: "public/deployment/sometimes.html,public/deployment/sitemap.xml,public/deployment/humans.txt,public/deployment/robots.txt,public/deployment/.htaccess"
+          target: "/home/oli/apps/oli_works"
           strip_components: 1

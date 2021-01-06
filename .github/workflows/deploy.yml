@@ -25,31 +25,17 @@ jobs:
       - name: Build
         run: hugo --minify
 
+      # Step 5 - prepare files for deployment
+      - name: prepare files for deployment
+        run: |
+          mkdir public/deployment
+          cp public/sometimes/index.html public/deployment/sometimes.html
+          cp public/sitemap.xml public/deployment/
+          cp htaccess.txt public/deployment/.htaccess
+          cp static/humans.txt public/deployment/
+          cp static/robots.txt public/deployment/
+
       # Step 5 - Deploy via scp to Opalstack
-      - name: copy website file to Opalstack
-        uses: garygrossgarten/github-action-scp@release
-        env:
-          host: ${{ secrets.HOST }}
-          username: ${{ secrets.USERNAME }}
-          port: ${{ secrets.PORT }}
-          privateKey: ${{ secrets.KEY }}
-        with:
-          local: "public/sometimes/index.html"
-          remote: "/home/oli/apps/oli_works/sometimes.html"
-
-      # Step 6 - Deploy via scp to Opalstack
-      - name: copy htaccess file to Opalstack
-        uses: garygrossgarten/github-action-scp@release
-        env:
-          host: ${{ secrets.HOST }}
-          username: ${{ secrets.USERNAME }}
-          port: ${{ secrets.PORT }}
-          privateKey: ${{ secrets.KEY }}
-        with:
-          local: "htaccess.txt"
-          remote: "/home/oli/apps/oli_works/.htaccess"
-
-      # Step 7 - copy txt files to Opalstack
       - name: copy txt files to Opalstack
         uses: appleboy/scp-action@master
         env:
@@ -58,7 +44,6 @@ jobs:
           PORT: ${{ secrets.PORT }}
           KEY: ${{ secrets.KEY }}
         with:
-          source: "static/humans.txt,static/robots.txt"
-          target: "/home/oli/apps/oli_works"
+          source: "public/deployment/*"
+          target: "/home/oli/apps/jakoubek_www"
           strip_components: 1
-

@@ -1,0 +1,4 @@
+baseURL = "https://oli.works/"
+languageCode = "en-us"
+title = "Oli works ..."
+theme = "oliworks"

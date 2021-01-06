@@ -1,0 +1,39 @@
+name: website deployment
+on:
+  push:
+    branches: [ main ]
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+
+      # Step 1 - Checks-out your repository
+      - name: Checkout
+        uses: actions/checkout@main
+
+      # Step 2 - Sets up the latest version of Hugo
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: 'latest'
+
+      # Step 3 - Clean and don't fail
+      - name: Clean public directory
+        run: rm -rf public
+
+      # Step 4 - Builds the site using the latest version of Hugo
+      - name: Build
+        run: hugo --minify
+
+      # Step 5 - Deploy via scp to Opalstack
+      - name: deploy website to Opalstack
+        uses: garygrossgarten/github-action-scp@release
+        env:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          port: ${{ secrets.PORT }}
+          privateKey: ${{ secrets.KEY }}
+        with:
+          local: "public/sometimes/index.html"
+          remote: "/home/oli/apps/oli_works/sometimes.html"
+          strip_components: 1

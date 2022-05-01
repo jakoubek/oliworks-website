@@ -8,7 +8,7 @@
         </main>
         {{- partial "footer.html" . -}}
         {{ if not (in (.Site.BaseURL | string) "localhost") }}
-        {{- partial "panelbear.html" . -}}
+        {{- partial "plausible.html" . -}}
         {{ end }}
     </body>
 </html>

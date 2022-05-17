@@ -32,8 +32,7 @@ jobs:
           cp public/sometimes/index.html public/deployment/sometimes.html
           cp public/sitemap.xml public/deployment/
           cp htaccess.txt public/deployment/.htaccess
-          cp static/humans.txt public/deployment/
-          cp static/robots.txt public/deployment/
+          cp static/*.* public/deployment/
 
       # Step 5 - Deploy via scp to Opalstack
       - name: copy files to Opalstack

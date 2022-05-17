@@ -1,7 +1,11 @@
 {{ define "main" }}
-<h2>Oliver Jakoubek &mdash; <i>Bad jokes & good red wine</i>&nbsp;🍷</h2>
-<br>
-    <p>A&nbsp;🇦🇹&nbsp;living in&nbsp;🇩🇪&nbsp;but feeling&nbsp;🇪🇺</p>
+<h1>Oliver Jakoubek &mdash; <i>Bad jokes & good red wine</i>&nbsp;🍷</h1>
+
+    <p><em>Upd. 2022-05-17</em></p>
+
+    <br>
+
+    <h3>/about</h3>
     <p>Definitely too old for all the places I'd like to see&nbsp;🗺️</p>
     <p>Still unsure whether I walk my&nbsp;🐕&nbsp;or my &nbsp;🐕&nbsp;walks me</p>
     <p>Can spend hours in book stores and libraries&nbsp;📚</p>
@@ -12,9 +16,16 @@
 
     <h3>/now</h3>
     <ul>
-      <li>Onetimecode, a webservice for numerical and alphanumerical randomized one-time-codes (<a href="https://github.com/jakoubek/onetimecode-webservice">jakoubek/onetimecode-webservice</a>)
-      <li>DatesAPI, a webservice for dates (<a href="https://github.com/jakoubek/dates-webservice">jakoubek/dates-webservice</a>)
+        <li>work on two completely useless API services, just to tune my personal setup and project structure for Go webservers:</li>
+        <ul>
+            <li><em>Onetimecode</em>, a webservice for numerical and alphanumerical randomized one-time-codes (Github: <a href="https://github.com/jakoubek/onetimecode-webservice">jakoubek/onetimecode-webservice</a>)
+            <li><em>DatesAPI</em>, a webservice for dates (Github: <a href="https://github.com/jakoubek/dates-webservice">jakoubek/dates-webservice</a>)
+        </ul>
+        <li>collecting all my how-to notes on different softwares and databases and publishing it on my <a href="https://technotes.jakoubek.net/?ref=ow">Technotes website</a></li>
     </ul>
+    <br>
+
+    <h3>/contact</h3>
 
     <p>
         <a href="tel:{{ .Site.Params.phoneNumber }}">Mobile</a> ~ <a href="mailto:{{ .Site.Params.emailAddress }}" target="_blank">Email</a> ~ <a href="https://threema.id/{{ .Site.Params.threemaId }}?text=">Threema</a> ~ <a href="https://www.twitter.com/{{ .Site.Params.twitterAccount }}/" target="_blank">Twitter</a> ~ <a href="https://www.jakoubek.net/?ref=ow" target="_blank">My software consulting (German)</a>

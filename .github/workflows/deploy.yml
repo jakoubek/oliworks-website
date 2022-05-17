@@ -43,7 +43,7 @@ jobs:
           PORT: ${{ secrets.PORT }}
           KEY: ${{ secrets.KEY }}
         with:
-          source: "public/deployment/sometimes.html,public/deployment/sitemap.xml,public/deployment/humans.txt,public/deployment/robots.txt,public/deployment/.htaccess"
+          source: "public/deployment/*.*"
           target: "/home/oli/apps/oli_works"
           strip_components: 2
 
